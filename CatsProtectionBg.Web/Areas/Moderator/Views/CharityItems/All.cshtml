@@ -1,0 +1,38 @@
+﻿@model CharityItemsListingViewModel
+@{
+    ViewData["Title"] = "All Charity Items";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+<thead>
+<tr>
+    <th>
+        Name
+    </th>
+    <th>
+        Price
+    </th>
+    <th>
+        Quantity
+    </th>
+</tr>
+</thead>
+<tbody>
+@foreach (var charityItem in Model.CharityItems)
+{
+    <tr>
+        <th>
+            @charityItem.Name
+        </th>
+        <th>
+            @charityItem.Price
+        </th>
+        <th>
+            @charityItem.Quantity             
+        </th>
+    </tr>
+}
+</tbody>
+</table>

@@ -14,6 +14,7 @@
         [MaxLength(CharityItemNameMaxLength)]
         public string Name { get; set; }
 
+        [Required]
         [Range(0, double.MaxValue)]
         public decimal Price { get; set; }
 
@@ -23,12 +24,12 @@
         public string Description { get; set; }
 
         [Required]
-        [MinLength(11)]   
+        [MinLength(11)]
         public string ImageUrl { get; set; }
 
         [Required]
         [Range(0, 100)]
-        public int? Quantity { get; set; }
+        public int Quantity { get; set; }
        
     }
 }

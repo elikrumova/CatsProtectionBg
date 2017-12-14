@@ -31,14 +31,23 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="Moderator" asp-controller="CharityItems" asp-action="All">CharityItemShop</a></li>
                     @if (User.IsInRole(WebConstants.AdministratorRole))
                     {
                         <li><a asp-area="Admin" asp-controller="Users" asp-action="Index">Users</a></li>
-                    
+
                     }
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About us</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (User.IsInRole(WebConstants.ModeratorRole))
+                    {
+                      
+                            <li><a asp-area="Moderator" asp-controller="CharityItems" asp-action="All">All</a></li>
+                        <li><a asp-area="Moderator" asp-controller="CharityItems" asp-action="Create">Create Charity Item</a></li>
+                        <li><a asp-area="Moderator" asp-controller="CharityItems" asp-action="Edit">Edit</a></li>
+
+
+                    }
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

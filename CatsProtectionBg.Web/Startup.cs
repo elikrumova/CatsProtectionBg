@@ -77,10 +77,11 @@
                 routes.MapRoute(
                     name: "moderator",
                     template: "moderator/charityitems/{id}/{title}",
-                    defaults: new { area = "Moderator", controller = "CharityItems", action = "Details" });
+                    defaults: new { area = "Moderator", controller = "CharityItems", action = "Create" });
 
                 routes.MapRoute(
                     name: "areas",
+
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
